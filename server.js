@@ -4,7 +4,7 @@ const fs = require('fs')
 const React =  require('react')
 const ReactDOMServer =  require("react-dom/server");
 const express =  require('express')
-// const App = require('./App.jsx')
+const App = require('./App.jsx')
 
 const PORT = process.env.PORT || 3000
 const app = express()
@@ -20,8 +20,7 @@ app.get('/', function(req, res){
         return res.send(
             data.replace(
                 '<div id="root"></div>',
-                `<div id="root">qwqwqwqwqw</div>`
-                
+                `<div id="root">${ReactDOMServer.renderToString(React.createElement(App))}</div>`
             )
         )
     })
