@@ -1,6 +1,7 @@
 const React = require('react');
 
 const App = () => {
+    const [times, setTimes] = React.useState(0)
     return (
         <div>
             <h1>hello {times}</h1>
