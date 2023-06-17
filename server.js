@@ -1,14 +1,16 @@
-import path from 'path'
-import fs from 'fs'
+const path = require('path') 
+const fs = require('fs') 
 
-import React from 'react'
-import ReactDOMServer from "react-dom/server";
-import express from 'express'
+const React =  require('react')
+const ReactDOMServer =  require("react-dom/server");
+const express =  require('express')
+// const App = require('./App.jsx')
 
 const PORT = process.env.PORT || 3000
 const app = express()
 
 app.get('/', function(req, res){
+    console.log('jereee');
     fs.readFile(path.resolve('./public/index.html'), 'utf8', function(err, data){
         if(err) {
             console.log(err)
@@ -17,14 +19,14 @@ app.get('/', function(req, res){
 
         return res.send(
             data.replace(
-                '<div> id="root"></div>',
-                `<div id="root">${ReactDOMServer.renderToString(<App />)}</div>`
+                '<div id="root"></div>',
+                `<div id="root">qwqwqwqwqw</div>`
             )
         )
     })
 })
 
-app.use(express.static(path.resolve(__dirname, '.', "dist"), {maxAge: '30d'}))
+// app.use(express.static(path.resolve(__dirname, '.', "dist"), {maxAge: '30d'}))
 
 app.listen(PORT, function(){
     console.log(`Server is listening on port ${PORT}`)

@@ -1,4 +1,4 @@
-import React from 'react'
+const React = require('react');
 
 const App = () => {
     return (
@@ -9,4 +9,4 @@ const App = () => {
     )
 }
 
-export default App
+module.exports =  App
