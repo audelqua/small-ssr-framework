@@ -21,6 +21,7 @@ app.get('/', function(req, res){
             data.replace(
                 '<div id="root"></div>',
                 `<div id="root">qwqwqwqwqw</div>`
+                
             )
         )
     })
