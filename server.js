@@ -15,7 +15,6 @@ app.get('/', function(req, res){
             console.log(err)
             return res.status(500).send('some error in reading file')
         }
-
         return res.send(
             data.replace(
                 '<div id="root"></div>',
